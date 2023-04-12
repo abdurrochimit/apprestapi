@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 var routes = require('./routes');
 routes(app);
 
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
