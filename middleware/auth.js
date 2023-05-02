@@ -62,7 +62,7 @@ exports.login = function (req, res) {
             console.log(error);
         } else {
             if (rows.length == 1) {
-                var token = jwt.sign({ rows }, config.secret, {
+                var token = jwt.sign({ rows },config.secret, {
                     expiresIn: 1440
                 });
                 id_user = rows[0].id;
@@ -98,4 +98,9 @@ exports.login = function (req, res) {
             }
         }
     });
+}
+
+// halaman Rahasia
+exports.halamanrahasia = function(req,res){
+    response.ok("Halaman ini hanya untuk user dengan role =2 !",res);
 }
